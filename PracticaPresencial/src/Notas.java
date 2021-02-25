@@ -5,8 +5,16 @@ public class Notas {
 	public static void main(String[] args) {
 		Scanner reader = new Scanner(System.in);// Para pedir números por teclado
 		int n = 0;
-		String calificacion = "";
+		String nota = "";
 		System.out.print("Introduzca una nota: ");
+		nota = obtenerNota(reader);
+		System.out.println(nota);
+		reader.close();
+	}
+
+	public static String obtenerNota(Scanner reader) {
+		int n;
+		String calificacion;
 		n = reader.nextInt();
 		if (n >= 0 && nota < 5)
 			calificacion = "Suspenso";
@@ -14,7 +22,6 @@ public class Notas {
 			calificacion = "Aprobado";
 		else
 			calificacion = "La nota introducida no es correcta";
-		System.out.println(calificacion);
-		reader.close();
+		return calificacion;
 	}
 }
